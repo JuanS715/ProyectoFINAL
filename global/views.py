@@ -81,7 +81,7 @@ def postForm(request):
             fecha=info["fecha"]
             previewPost=info["previewPost"]
             
-            posteo=Post(titulo=titulo, post=post, subtitulo=subtitulo, autor=autor, fecha=fecha, previewPost=previewPost, )
+            posteo=Post(titulo=titulo, post=post, subtitulo=subtitulo, autor=autor, fecha=fecha, previewPost=previewPost,)
             posteo.save()
             return render(request, "global/index.html",{"mensaje":"Post creado exitosamente"})
         else:
@@ -143,7 +143,7 @@ def agregarAvatar(request):
             if len(avatarViejo)>0:
                 avatarViejo[0].delete 
             avatar.save()
-            return render(request, "global/index.html")
+            return render(request, "global/index.html", {"mensaje":"Avatar cambiando correctamente"})
         else:
             return render(request, "global/avatar.html", {"form":form, "usuario":request.user, "mensaje":"ocurrio un error intente nuevamente"})
 

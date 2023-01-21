@@ -1,0 +1,35 @@
+{% extends "global/index.html" %}
+
+
+{% block titulo %}
+<h1>Gestionar mi correo</h1>
+{% endblock %}
+
+{% block content %}
+{{ mensaje }}
+<img src="{{ avatar }}" alt="">
+<div class="my-5">
+                 
+    <form action="{% url 'messages' %}" method="GET">
+       
+    <p>Enviar mensajes</p>
+    
+    
+       <input type="submit" value="Ir">
+    
+    
+    </form>
+ </div>
+ <div class="my-5">
+                 
+    <form action="{% url 'showMessages' %}" method="GET">
+       <p>Mi correo</p>
+    
+    
+    
+       <input type="submit" value="Ir">
+    
+    
+    </form>
+ </div>
+{% endblock %}

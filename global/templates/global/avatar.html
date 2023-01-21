@@ -1,0 +1,35 @@
+{% extends "global/index.html" %}
+
+
+{% block titulo %}
+<h1>Agregando avatar a : {{ usuario.username }}<h1>
+{% endblock %}
+
+{% block content %}
+{{ mensaje }}
+
+<main class="mb-4">
+   <div class="container px-4 px-lg-5">
+       <div class="row gx-4 gx-lg-5 justify-content-center">
+           <div class="col-md-10 col-lg-8 col-xl-7">
+               <p>Ingrese su informacion para entrar en su perfil</p>
+               <div class="my-5">
+                 
+                   <form action="{% url 'agregarAvatar' %}" method="POST" enctype="multipart/form-data">  {% csrf_token %}
+
+                       <table>
+                          
+                   
+                         {{ form.as_table }} 
+                       
+                       
+                    
+                      </table>
+                      <input type="submit" value="Modificar Avatar">
+               </div>
+           </div>
+       </div>
+   </div>
+</main>
+
+{% endblock %}

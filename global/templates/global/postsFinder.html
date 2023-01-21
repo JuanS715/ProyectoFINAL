@@ -1,0 +1,33 @@
+{% extends "global/index.html" %}
+
+
+{% block titulo %}
+<h1>Buscador de posteos<h1>
+{% endblock %}
+
+{% block content %}
+{{ mensaje }}
+
+<main class="mb-4">
+   <div class="container px-4 px-lg-5">
+       <div class="row gx-4 gx-lg-5 justify-content-center">
+           <div class="col-md-10 col-lg-8 col-xl-7">
+            <img src="{{ avatar }}" alt=""> <p>Ingrese aqui el post que queria ver  </p>
+               <div class="my-5">
+                 
+                  <form action="{% url 'buscar' %}" method="GET">
+                     <input type="text" name="titulo" id="titulo">
+                  
+                  
+                  
+                     <input type="submit" value="Buscar">
+                  
+                  
+                  </form>
+               </div>
+           </div>
+       </div>
+   </div>
+</main>
+
+{% endblock %}
